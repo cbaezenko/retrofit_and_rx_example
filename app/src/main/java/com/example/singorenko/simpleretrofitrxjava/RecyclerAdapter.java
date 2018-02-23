@@ -35,11 +35,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
     }
 
     public class RecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        public TextView tv_id, tv_info;
+        public TextView tv_date, tv_minTemp, tv_maxTemp;
         public RecyclerViewHolder(View itemView) {
             super(itemView);
-            tv_id = itemView.findViewById(R.id.tv_id);
-            tv_info = itemView.findViewById(R.id.tv_info);
+            tv_date = itemView.findViewById(R.id.tv_date);
+            tv_minTemp = itemView.findViewById(R.id.tv_minTemp);
+            tv_maxTemp = itemView.findViewById(R.id.tv_maxTemp);
             itemView.setOnClickListener(this);
         }
 
