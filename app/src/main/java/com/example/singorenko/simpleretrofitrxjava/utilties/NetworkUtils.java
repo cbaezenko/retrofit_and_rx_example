@@ -1,4 +1,4 @@
-package com.example.singorenko.simpleretrofitrxjava;
+package com.example.singorenko.simpleretrofitrxjava.utilties;
 
 /**
  * Created by baeza on 23/2/18.

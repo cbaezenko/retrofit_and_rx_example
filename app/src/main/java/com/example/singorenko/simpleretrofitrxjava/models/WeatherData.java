@@ -1,4 +1,4 @@
-package com.example.singorenko.simpleretrofitrxjava;
+package com.example.singorenko.simpleretrofitrxjava.models;
 
 /**
  * Created by baeza on 23/2/18.
@@ -6,7 +6,7 @@ package com.example.singorenko.simpleretrofitrxjava;
 
 public class WeatherData {
 
-    String date, minTemp, maxTemp;
+    String date, minTemp, maxTemp, staticweather;
 
     public WeatherData(String date, String minTemp, String maxTemp){
         this.date = date;
