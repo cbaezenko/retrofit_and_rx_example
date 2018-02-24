@@ -5,5 +5,5 @@ package com.example.singorenko.simpleretrofitrxjava;
  */
 
 public class NetworkUtils {
-    public static String URL = "api.openweathermap.org/data/2.5/weather?q=Moscow";
+    public static String URL = "https://andfun-weather.udacity.com/staticweather";
 }
