@@ -1,4 +1,4 @@
-package com.example.singorenko.simpleretrofitrxjava.models;
+package com.example.singorenko.simpleretrofitrxjava.data.model;
 
 /**
  * Created by baeza on 23/2/18.

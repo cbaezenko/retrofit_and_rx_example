@@ -1,5 +1,5 @@
 
-package com.example.singorenko.simpleretrofitrxjava.models;
+package com.example.singorenko.simpleretrofitrxjava.data.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
