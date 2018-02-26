@@ -6,7 +6,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
-import com.example.singorenko.simpleretrofitrxjava.data.model.Example;
+import com.example.singorenko.simpleretrofitrxjava.data.model.List;
+import com.example.singorenko.simpleretrofitrxjava.data.model.WeatherData;
 import com.example.singorenko.simpleretrofitrxjava.data.utilties.ApiUtils;
 
 import java.io.IOException;
@@ -27,25 +28,17 @@ public class MainActivity extends AppCompatActivity {
 
         mRecyclerView = findViewById(R.id.rv);
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false);
-        recyclerAdapter = new RecyclerAdapter();
-
-        mRecyclerView.setAdapter(recyclerAdapter);
-        mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(layoutManager);
-
         try {
             getRetrofit();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     private void getRetrofit() throws IOException {
 
         ApiUtils.getApiService().getExample().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<Example>() {
+                .subscribe(new Subscriber<WeatherData>() {
                     @Override
                     public void onCompleted() {
                     }
@@ -53,11 +46,23 @@ public class MainActivity extends AppCompatActivity {
                     public void onError(Throwable e) {
                     }
                     @Override
-                    public void onNext(Example example) {
-                        Log.d(TAG, "successfully "+ example.getMessage());
-                        Log.d(TAG, "successfully "+ example.getCity().getName());
+                    public void onNext(WeatherData weatherResponse) {
+                        Log.d(TAG, "successfully "+ weatherResponse.getMessage());
+                        Log.d(TAG, "successfully "+ weatherResponse.getCity().getName());
+
+                        loadRecyclerView(weatherResponse.getList());
                     }
                 });
+    }
+
+    private void loadRecyclerView(java.util.List<List> list){
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false);
+        recyclerAdapter = new RecyclerAdapter(list);
+
+        mRecyclerView.setAdapter(recyclerAdapter);
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(layoutManager);
     }
 
 }

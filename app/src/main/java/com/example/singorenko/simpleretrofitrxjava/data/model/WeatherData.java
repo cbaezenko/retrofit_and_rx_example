@@ -1,20 +1,65 @@
+
 package com.example.singorenko.simpleretrofitrxjava.data.model;
 
-/**
- * Created by baeza on 23/2/18.
- */
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class WeatherData {
 
-    String date, minTemp, maxTemp, staticweather;
+    @SerializedName("city")
+    @Expose
+    private City city;
+    @SerializedName("cod")
+    @Expose
+    private String cod;
+    @SerializedName("message")
+    @Expose
+    private Double message;
+    @SerializedName("cnt")
+    @Expose
+    private Integer cnt;
+    @SerializedName("list")
+    @Expose
+    private java.util.List<com.example.singorenko.simpleretrofitrxjava.data.model.List> list = null;
 
-    public WeatherData(String date, String minTemp, String maxTemp){
-        this.date = date;
-        this.minTemp = minTemp;
-        this.maxTemp = maxTemp;
+    public City getCity() {
+        return city;
     }
 
-    public String getDate() {return date;}
-    public String getMinTemp() {return minTemp;}
-    public String getMaxTemp() {return maxTemp;}
+    public void setCity(City city) {
+        this.city = city;
+    }
+
+    public String getCod() {
+        return cod;
+    }
+
+    public void setCod(String cod) {
+        this.cod = cod;
+    }
+
+    public Double getMessage() {
+        return message;
+    }
+
+    public void setMessage(Double message) {
+        this.message = message;
+    }
+
+    public Integer getCnt() {
+        return cnt;
+    }
+
+    public void setCnt(Integer cnt) {
+        this.cnt = cnt;
+    }
+
+    public java.util.List<com.example.singorenko.simpleretrofitrxjava.data.model.List> getList() {
+        return list;
+    }
+
+    public void setList(java.util.List<com.example.singorenko.simpleretrofitrxjava.data.model.List> list) {
+        this.list = list;
+    }
+
 }

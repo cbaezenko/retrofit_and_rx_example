@@ -1,10 +1,9 @@
 package com.example.singorenko.simpleretrofitrxjava.data.remote;
 
-import com.example.singorenko.simpleretrofitrxjava.data.model.Example;
+import com.example.singorenko.simpleretrofitrxjava.data.model.WeatherData;
 
 import rx.Observable;
 
-import retrofit2.Call;
 import retrofit2.http.GET;
 
 /**
@@ -14,6 +13,6 @@ import retrofit2.http.GET;
 public interface ApiService {
 
     @GET("staticweather")
-    Observable<Example> getExample();
+    Observable<WeatherData> getExample();
 
 }

@@ -7,11 +7,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.singorenko.simpleretrofitrxjava.data.model.List;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by baeza on 23/2/18.
  */
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.RecyclerViewHolder> {
+    java.util.List<List> list;
+
+    public RecyclerAdapter(java.util.List<List> list) {
+        this.list = list;
+    }
 
     @Override
     public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -27,11 +37,17 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
     @Override
     public void onBindViewHolder(RecyclerViewHolder holder, int position) {
 
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        String date = formatter.format(new Date(list.get(position).getDt().longValue()*1000));
+
+        holder.tv_date.setText(date);
+        holder.tv_minTemp.setText(list.get(position).getTemp().getMin().toString());
+        holder.tv_maxTemp.setText(list.get(position).getTemp().getMax().toString());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return list.size();
     }
 
     public class RecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
