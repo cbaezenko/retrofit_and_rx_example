@@ -1,5 +1,6 @@
 package com.example.singorenko.simpleretrofitrxjava.service;
 
+import com.example.singorenko.simpleretrofitrxjava.models.Example;
 import com.example.singorenko.simpleretrofitrxjava.models.WeatherData;
 
 import java.util.Observable;
@@ -12,7 +13,7 @@ import retrofit2.http.GET;
 
 public interface WeatherService {
 
-//    @GET("application")
-//    Observable<WeatherData> getWeatherData();
+//    @GET("{message}")
+//    Observable<Example> getMessage();
 
 }

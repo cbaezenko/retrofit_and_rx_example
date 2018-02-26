@@ -20,7 +20,7 @@ public class Example {
     private Integer cnt;
     @SerializedName("list")
     @Expose
-    private java.util.List<com.example.List> list = null;
+    private java.util.List<com.example.singorenko.simpleretrofitrxjava.models.List> list = null;
 
     public City getCity() {
         return city;
@@ -54,11 +54,11 @@ public class Example {
         this.cnt = cnt;
     }
 
-    public java.util.List<com.example.List> getList() {
+    public java.util.List<com.example.singorenko.simpleretrofitrxjava.models.List> getList() {
         return list;
     }
 
-    public void setList(java.util.List<com.example.List> list) {
+    public void setList(java.util.List<com.example.singorenko.simpleretrofitrxjava.models.List> list) {
         this.list = list;
     }
 
